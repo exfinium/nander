@@ -1,0 +1,32 @@
+:root {
+  --pad: 0px;
+  --pad2: calc(var(--pad) * 2);
+}
+
+body {
+  margin: 0;
+  padding: var(--pad);
+  width: calc(100vw - var(--pad2));
+  height: calc(100vh - var(--pad2));
+  display: grid;
+  gap: var(--pad);
+  grid-template: 
+    ". . ." minmax(var(--pad), auto)
+    ". w ." minmax(150px, 1fr)
+    ". . ." minmax(var(--pad), auto)
+    / minmax(var(--pad), auto) minmax(150px, 1fr) minmax(var(--pad), auto);
+}
+
+.workSpace {
+  grid-area: w;
+  overflow: hidden;
+  outline: none;
+  background-color: brown;
+}
+.workSpace>canvas {
+  transform-origin: 0 0;
+  /* position: relative; */
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  /* background-color: aqua; */
+}
